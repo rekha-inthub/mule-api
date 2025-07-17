@@ -36,7 +36,9 @@ jobs:
       - name: Setup Java JDK
         uses: actions/setup-java@v3.14.1
         with:
-          java-version: 17
+          #java-version: 17
+          java-version: 17-ea
+          distribution: adopt # zulu, temurin, 
     
       - name: Print effective-settings (optional)
         run: mvn help:effective-settings
