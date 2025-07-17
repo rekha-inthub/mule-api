@@ -7,7 +7,7 @@
 
   <servers>
     <server>
-      <id>MuleRepository</id>
+      <id>Repository</id>
       <username>${anypoint.username}</username>
       <password>${anypoint.password}</password>
     </server>
