@@ -1,15 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<mule xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core"
+	xmlns:http="http://www.mulesoft.org/schema/mule/http"
+	xmlns="http://www.mulesoft.org/schema/mule/core" 
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
+
+
+<!-- 
 <mule xmlns:json-logger="http://www.mulesoft.org/schema/mule/json-logger" xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core"
 	xmlns:http="http://www.mulesoft.org/schema/mule/http"
 	xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
 http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
 http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd
 http://www.mulesoft.org/schema/mule/json-logger http://www.mulesoft.org/schema/mule/json-logger/current/mule-json-logger.xsd">
+ -->
 	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="20b1a669-2557-4c36-9ded-c90543870b53" >
 		<http:listener-connection host="0.0.0.0" port="8081" />
 	</http:listener-config>
-	<json-logger:config name="JSON_Logger_Config" doc:name="JSON Logger Config" doc:id="3abc5cf8-9130-441d-b14d-b9bc77746e14" environment="dev" applicationName="mule-api" applicationVersion="0.0.1"/>
+	<!--  
+	<json-logger:config name="JSON_Logger_Config" doc:name="JSON Logger Config" doc:id="332a5bd0-da45-4ed1-867a-3c22fc20746b" environment="dev" applicationName="mule-api" applicationVersion="0.0.1"/>
+	 -->
 	<flow name="main-flow" doc:id="376816d5-aa24-4a33-ad4c-17025c1deac1" >
 		<http:listener doc:name="Listener" doc:id="9db7e93d-3c53-4431-bc66-5180f6d73967" config-ref="HTTP_Listener_config" path="/simple/api"/>
 		<!-- [STUDIO:"Logger"]<json-logger:logger doc:name="Logger" doc:id="d8275e9a-d519-4b70-98d2-51d86120ba5b" config-ref="JSON_Logger_Config" message='"Before transform"' tracePoint="BEFORE_TRANSFORM"/> [STUDIO] -->
