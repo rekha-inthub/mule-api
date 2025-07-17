@@ -64,12 +64,13 @@
 			<version>1.2.6</version>
 			<classifier>mule-plugin</classifier>
 		</dependency>
-		<dependency>
+		<!-- <dependency>
 			<groupId>a3c60d43-de98-4570-ae59-acdd4ae8effc</groupId>
 			<artifactId>json-logger</artifactId>
 			<version>0.0.1</version>
 			<classifier>mule-plugin</classifier>
 		</dependency>
+		 -->
 	</dependencies>
 
 	<repositories>

@@ -12,7 +12,8 @@ http://www.mulesoft.org/schema/mule/json-logger http://www.mulesoft.org/schema/m
 	<json-logger:config name="JSON_Logger_Config" doc:name="JSON Logger Config" doc:id="3abc5cf8-9130-441d-b14d-b9bc77746e14" environment="dev" applicationName="mule-api" applicationVersion="0.0.1"/>
 	<flow name="main-flow" doc:id="376816d5-aa24-4a33-ad4c-17025c1deac1" >
 		<http:listener doc:name="Listener" doc:id="9db7e93d-3c53-4431-bc66-5180f6d73967" config-ref="HTTP_Listener_config" path="/simple/api"/>
-		<json-logger:logger doc:name="Logger" doc:id="d8275e9a-d519-4b70-98d2-51d86120ba5b" config-ref="JSON_Logger_Config" message='"Before transform"' tracePoint="BEFORE_TRANSFORM"/>
+		<!-- [STUDIO:"Logger"]<json-logger:logger doc:name="Logger" doc:id="d8275e9a-d519-4b70-98d2-51d86120ba5b" config-ref="JSON_Logger_Config" message='"Before transform"' tracePoint="BEFORE_TRANSFORM"/> [STUDIO] -->
+		<logger level="INFO" doc:name="Logger" doc:id="36edfadc-4e42-4a31-9039-6a7771ef48bf" message="Request received"/>
 		<ee:transform doc:name="Transform Message" doc:id="ce1821f7-9bff-4b37-9032-7b8326db2adf" >
 			<ee:message >
 				<ee:set-payload ><![CDATA[%dw 2.0
@@ -21,6 +22,7 @@ output application/json
 payload]]></ee:set-payload>
 			</ee:message>
 		</ee:transform>
-		<json-logger:logger doc:name="Logger" doc:id="9947ca23-6d0b-4c71-8a3c-27d3b856357a" config-ref="JSON_Logger_Config" message='"After Transform"' tracePoint="AFTER_TRANSFORM"/>
+		<logger level="INFO" doc:name="Logger" doc:id="95e38b35-124a-41f5-bcaf-57586b4da76c" message="Response sent"/>
+		<!-- [STUDIO:"Logger"]<json-logger:logger doc:name="Logger" doc:id="9947ca23-6d0b-4c71-8a3c-27d3b856357a" config-ref="JSON_Logger_Config" message='"After Transform"' tracePoint="AFTER_TRANSFORM"/> [STUDIO] -->
 	</flow>
 </mule>
