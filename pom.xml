@@ -6,7 +6,7 @@
 
 	<groupId>a3c60d43-de98-4570-ae59-acdd4ae8effc</groupId>
 	<artifactId>mule-api</artifactId>
-	<version>1.0.0-SNAPSHOT</version>
+	<version>1.0.1</version>
 	<packaging>mule-application</packaging>
 
 	<name>mule-api</name>
@@ -45,6 +45,7 @@
 						<applicationName>${project.name}</applicationName>
 						<replicas>1</replicas>
 						<vCores>0.1</vCores>
+						<skipDeploymentVerification>true</skipDeploymentVerification>
 					</cloudhub2Deployment>
 				</configuration>
 			</plugin>
