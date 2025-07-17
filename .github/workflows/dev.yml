@@ -97,7 +97,7 @@ jobs:
          -Dmule.artifact=$artifactName \
          -Danypoint.username="$USERNAME" \
          -Danypoint.password="$PASSWORD" \
-         -Denv=Sandbox \
+         -Denv="$ENVIRONMENT" \
          -DskipTests
          
     - name: Notify Slack
